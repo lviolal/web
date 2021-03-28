@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: worldoftg.com
+Token: 33cd5824be68351fbd6633c1afcf936b7662a43d64b89d516f34122bf8b54d6b
