@@ -1,0 +1,63 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Mutation {
+  createSource(link: String!, pubDate: String!, rssType: String!, source: String!, sourceImage: String!, tag: String!, title: String!): WOTGSource
+}
+
+type Query {
+  feed: [WOTGFeed]
+  homePageQuery(tags: [String!]!): [WOTGItem]
+  item(guid: String!): WOTGItem
+  items(limit: Int, offset: Int, tag: String): [WOTGItem]
+  post(guid: String!): WOTGPost
+  posts(author: String!): [WOTGPost]
+  searchItems(limit: Int, offset: Int, sort: String!, sources: [String!], tags: [String!]): [WOTGItem]
+  sources(tags: [String!]): [WOTGSource]
+}
+
+type WOTGFeed {
+  author: String
+  description: String
+  guid: String!
+  image: String
+  link: String
+  pubDate: String
+  title: String!
+}
+
+type WOTGItem {
+  author: String!
+  description: String!
+  guid: String!
+  image: String!
+  link: String!
+  pubDate: String!
+  source: String!
+  tag: String!
+  title: String!
+  website: String!
+}
+
+type WOTGPost {
+  author: String!
+  body: String!
+  description: String!
+  guid: String!
+  image: String
+  link: String
+  pubDate: String!
+  title: String!
+}
+
+type WOTGSource {
+  link: String!
+  pubDate: String!
+  rssType: String!
+  source: String!
+  sourceImage: String!
+  tag: String!
+  title: String!
+}
